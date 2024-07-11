@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codedex Hackathon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Pacifico&display=swap" rel="stylesheet">
+ <!-- Style Flipdown -->
+        <link href="https://pbutcher.uk/flipdown/css/flipdown/flipdown.css" rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+FR+Moderne:wght@100..400&display=swap" rel="stylesheet">
+        
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="map"></div>
+  <div class="slider">
+    <div class="slide" style="background: url(img2.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+     <div class="slide" style="background: url(img3.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+     <div class="slide" style="background: url(img4.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+     <div class="slide" style="background: url(img5.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+     <div class="slide" style="background: url(img6.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+     <div class="slide" style="background: url(img7.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+     <div class="slide" style="background: url(img4.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+     <div class="slide" style="background: url(img4.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+     <div class="slide" style="background: url(img4.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+     <div class="slide" style="background: url(img4.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+     <div class="slide" style="background: url(img4.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+     <div class="slide" style="background: url(img4.jpeg)">
+      <h2><s>get out of the store</s> and to the streets</h2>
+    </div>
+    
+  </div>
+  <header>
+  <h1 class="header-text">
+  <span class="strike-through">get out of the store</span>
+  <span class="text-part"> and to the streets</span>
+</h1>
+  </header>
+  <div class="count-down-cover">
+    <div class="count-down">
+            <h1 style="color:#fff">We rave at:</h1>
+            <div class="flipdown" id="flipdown"></div>
+        </div>
+        <div class="glass">
+          <p>
+            The thrill of the hunt is half the fun, and the sense of community and connection you'll experience is the real prize. <b>Join us at Brooklyn NYC, carol gardens , 2nd avenue</b>.
+          </p>
+        </div>
+  </div>
+  <h1 class="logo" data-text="Sale">Stoop</h1>
+  
+  <div class="details">
+    <h1 class="logo force">Stoop</h1>
+    <div>
+      <p>Sometimes we find treasures in the most odd places and some people's oddities could just be your prized possession. So why not head on down to carroll garden</p>
+      <p>
+        You never know what hidden gems you might uncover - from vintage clothing and antique furniture to quirky knick-knacks and one-of-a-kind artwork.
+      </p>
+      <p>
+        So pack your reusable tote bags and get ready to explore the hidden treasures of Carroll Gardens. <b>We are at: <u>NYC, carol gardens , 2nd avenue</u></b>. 
+      </p>
+      <span style="width: 20em">
+      <img src="qr.png" width="90%">
+      <button id="tmt" class="takemethere">Take me there</button>
+      </span>
+    </div>
+  </div>
+ <div class="background"></div>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body {
+  background: #000;
+  background-size: cover;
+  color: #fff;
+  font-family: "Playwrite FR Moderne", cursive;
+}
+.background:hover {
+  animation-play-state: paused;
+}
+
+
+@keyframes flashphotography {
+  0% {
+    background: url(img4.jpeg);
+    background-size: cover;
+  }
+  33.33% {
+    background: url(img7.jpeg);
+    background-size: cover;
+  }
+  66.67% {
+    background: url(img6.jpeg);
+    background-size: cover;
+  }
+  100% {
+    background: url(img4.jpeg);
+    background-size: cover;
+  }
+}
+  header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3em;
+  }
+  .header-text {
+  text-align: center;
+  font-size: 2rem; /* Adjust font size as needed */
+  animation: flash 5s infinite ease-in-out; 
+  font-weight: 700;
+}
+.details {
+  height: 23em;
+  padding: 0 2em;
+  padding-bottom: 4em;
+}
+.details p {
+  width: 20em;
+  font-family: "Chivo", sans-serif;
+}
+.details div {
+  display: flex;
+  gap: 4em;
+}
+
+@keyframes flashText {
+  0% {
+    color: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    text-shadow: none;
+  }
+  25% {
+    color: transparent;
+    text-shadow: 0 0 5px white, 0 0 10px black;
+  }
+  50% {
+    color: white;
+    text-shadow: none;
+  }
+  75% {
+    color: white;
+    text-shadow: 0 0 5px black, 0 0 10px white;
+  }
+  100% {
+    color: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    text-shadow: none;
+  }
+}
+@keyframes flash {
+  0% {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px linear-gradient(to right, #ff6b6b, #ffa500);
+  }
+  10% {
+    color: linear-gradient(to right, #ff6b6b, #ffa500);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #000;
+  }
+  20% {
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke: 2px #000;
+  }
+  30% {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px linear-gradient(to right, #6b5b95, #9b59b6);
+  }
+  40% {
+    color: linear-gradient(to right, #6b5b95, #9b59b6);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #000;
+  }
+  50% {
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke: 2px #000;
+  }
+  60% {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px linear-gradient(to right, #2980b9, #6dd5fa);
+  }
+  70% {
+    color: linear-gradient(to right, #2980b9, #6dd5fa);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #000;
+  }
+  80% {
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke: 2px #000;
+  }
+  90% {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px linear-gradient(to right, #27ae60, #2ecc71);
+  }
+  100% {
+    color: linear-gradient(to right, #27ae60, #2ecc71);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #000;
+  }
+}
+  .header-text {
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.strike-through {
+  position: relative;
+  display: inline-block;
+  transition: color 0.5s ease;
+}
+
+.strike-through::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  left: 0;
+  top: 60%;
+  transform: translateY(-50%);
+  transition: width 0.5s ease;
+}
+
+.header-text:hover .strike-through {
+  color: #111;
+}
+
+.header-text:hover .strike-through::before {
+  width: 0;
+}
+
+.text-part {
+  margin-left: 10px;
+}
+  .header-text, a {
+    font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  }
+  .logo {
+    font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-size: 2em;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1em;
+  color: #fff;
+  display: none;
+  }
+  
+    .takemethere {
+  height: 3em;
+  width: 10em;
+  border: 1px solid #111;
+  border-radius: 0.4em;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #111;
+  position: fixed;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: .2s;
+  cursor: pointer;
+  border: 1px solid #999;
+  z-index: 9999;
+}
+
+span {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+.takemethere:hover {
+  box-shadow: -10px 10px 0px #000;
+}
+.slider {
+    width: 90%;
+    height: 25em;
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding: 1em 5%;
+}
+
+.slide {
+  height: 100%;
+  width: 14em;
+  background-size: cover !important;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  animation: slide 30s linear infinite;
+  transition: ease-in-out .2s;
+}
+.slide:hover {
+  position: relative;
+  top: 2em;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 48em) {
+  .strike-through::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  left: 0;
+  top: 30%;
+  transform: translateY(-50%);
+  transition: width 0.5s ease;
+}
+.count-down {
+        width: 100%;
+        
+    }
+    .count-down .flipdown {
+    margin: auto;
+        margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+}
+
+
+.glitch {
+  
+  text-transform: uppercase;
+  
+  text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+    0.025em 0.04em 0 #fffc00;
+  animation: glitch 725ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch 500ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  transform: translate(-0.04em, -0.03em);
+  opacity: 0.75;
+}
+
+.glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  transform: translate(0.04em, 0.03em);
+  opacity: 0.75;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+      0.025em 0.04em 0 #fffc00;
+  }
+  15% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+      0.025em 0.04em 0 #fffc00;
+  }
+  16% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+      -0.05em -0.05em 0 #fffc00;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+      -0.05em -0.05em 0 #fffc00;
+  }
+  50% {
+    text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+      0 -0.04em 0 #fffc00;
+  }
+  99% {
+    text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+      0 -0.04em 0 #fffc00;
+  }
+  100% {
+    text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+      -0.04em -0.025em 0 #fffc00;
+  }
+}
+.count-down-cover {
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.count-down {
+    width: 550px;
+    color: #fff;
+    margin: auto;
+    padding: 20px;
+}
+.count-down .flipdown {
+    margin: auto;
+    margin-top: 30px;
+}
+.count-down h1 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 3em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.flipdown.flipdown__theme-dark .rotor-group-heading:before {
+    color: #ffffff;
+}
+@media (max-width: 550px) {
+   
+    .count-down h1 {
+        font-size: 2.5em;
+    }
+}
+header {
+  display: none;
+}
+@media (max-width: 40em) {
+  .slider {
+    display: none;
+  }
+  header {
+    display: flex;
+  }
+   .background {
+  background: url(_.jpeg);
+  background-size: cover;
+  animation: flashphotography 3s infinite step-end;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.logo {
+  display: block;
+}
+.count-down-cover {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding-bottom: 3em;
+}
+.count-down {
+  width: auto !important;
+  padding: 0;
+}
+.details {
+  overflow: hidden;
+  height: 0em;
+  padding: 0;
+}
+span .takemethere {
+  position: fixed;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.glass {
+  padding: 1em;
+ 
+}
+.glass p {
+   /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.6px);
+-webkit-backdrop-filter: blur(9.6px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+padding: 1em .5em;
+}
+}
+h2 {
+    white-space: normal;
+}
+
+.map-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: white;
+}
+
+.map-overlay #map {
+  width: 100%;
+  height: 100%;
+}
+.force {
+    display: block !important;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: initial;
+    text-shadow: 5px 5px 0px #f25;
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+  </style>
+  
+  
+    <!-- Scripts -->
+        <script src="https://pbutcher.uk/flipdown/js/flipdown/flipdown.js"></script>
+       
+  <script>
+ mapboxgl.accessToken = 'pk.eyJ1IjoianZrZWNocmlzIiwiYSI6ImNseWg1aWN6eDAxMHIya3M4dG8xeHlsNDMifQ.72yHrET1FT84q35aJfnr3g';
+
+const map = new mapboxgl.Map({
+  // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+  style: 'mapbox://styles/mapbox/streets-v11',
+  center: [-73.99852, 40.68161], // Updated coordinates
+  zoom: 15.5,
+  container: 'map',
+  antialias: true
+});
+
+// Add a marker at the specified coordinates
+const marker = new mapboxgl.Marker()
+  .setLngLat([-73.99852, 40.68161])
+  .addTo(map);
+
+// Get the button element
+const takeMethere = document.getElementById('tmt');
+
+// Get the map container element
+const mapContainer = document.getElementById('map');
+
+// Add a click event listener to the button
+takeMethere.addEventListener('click', () => {
+  // Toggle the map overlay class
+  mapContainer.classList.toggle('map-overlay');
+
+  // Adjust the map size and position
+  map.resize();
+
+  // Get the current zoom level
+  const currentZoom = map.getZoom();
+
+  // Fit the map to the marker's location
+  map.flyTo({
+    center: [-73.99852, 40.68161],
+    zoom: currentZoom,
+    essential: true // this animation is considered essential with respect to prefers-reduced-motion
+  });
+});
+    const soundScroll = new Audio('scroll_sound.mp3');
+const soundTap = new Audio('tap_sound.mp3');
+
+window.addEventListener('scroll', function() {
+  soundScroll.play();
+});
+
+window.addEventListener('touchstart', function() {
+  soundTap.play();
+});
+
+window.addEventListener('click', function() {
+  soundTap.play();
+});
+// The End Of Year Date To Countdown Date
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Unix timestamp (in seconds) to count down to
+    var toDayFromNow = (new Date("July 11, 2024 16:00:00").getTime() / 1000) + (3600 / 60 / 60 / 24) - 1;
+    // Set Up FlipDown
+    var flipdown = new FlipDown(toDayFromNow)
+
+    // Start The Count Down
+    .start()
+    // Do Something When The Countdown Ends
+    .ifEnded(() => {
+        document.querySelector(".flipdown").innerHTML = `<h2>Timer is ended</h2>`;
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.querySelector('.slider');
+  const slides = slider.querySelectorAll('.slide');
+
+  // Clone the first slide and append it to the end
+  const firstSlide = slides[0].cloneNode(true);
+  slider.appendChild(firstSlide);
+
+  // Add hover event listener to each slide
+  slides.forEach((slide) => {
+    slide.addEventListener('mouseenter', playSound);
+  });
+
+  function playSound() {
+    const audio = new Audio('scroll_sound.mp3');
+    audio.play();
+  }
+});
+  </script>
+  
+</body>
+</html>
