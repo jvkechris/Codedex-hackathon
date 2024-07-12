@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="map"></div>
@@ -80,10 +81,10 @@
           </p>
         </div>
   </div>
-  <h1 class="logo" data-text="Sale">Stoop</h1>
+  <h1 class="logo" data-text="Sale">My corner</h1>
   
   <div class="details">
-    <h1 class="logo force">Stoop</h1>
+    <h1 class="logo force">My corner</h1>
     <div>
       <p>Sometimes we find treasures in the most odd places and some people's oddities could just be your prized possession. So why not head on down to carroll garden</p>
       <p>
@@ -342,6 +343,7 @@ span {
   font-weight: bold;
   animation: slide 30s linear infinite;
   transition: ease-in-out .2s;
+  font-family: "Playfair Display", serif;
 }
 .slide:hover {
   position: relative;
@@ -570,95 +572,6 @@ h2 {
     <!-- Scripts -->
         <script src="https://pbutcher.uk/flipdown/js/flipdown/flipdown.js"></script>
        
-  <script>
- mapboxgl.accessToken = 'pk.eyJ1IjoianZrZWNocmlzIiwiYSI6ImNseWg1aWN6eDAxMHIya3M4dG8xeHlsNDMifQ.72yHrET1FT84q35aJfnr3g';
-
-const map = new mapboxgl.Map({
-  // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-  style: 'mapbox://styles/mapbox/streets-v11',
-  center: [-73.99852, 40.68161], // Updated coordinates
-  zoom: 15.5,
-  container: 'map',
-  antialias: true
-});
-
-// Add a marker at the specified coordinates
-const marker = new mapboxgl.Marker()
-  .setLngLat([-73.99852, 40.68161])
-  .addTo(map);
-
-// Get the button element
-const takeMethere = document.getElementById('tmt');
-
-// Get the map container element
-const mapContainer = document.getElementById('map');
-
-// Add a click event listener to the button
-takeMethere.addEventListener('click', () => {
-  // Toggle the map overlay class
-  mapContainer.classList.toggle('map-overlay');
-
-  // Adjust the map size and position
-  map.resize();
-
-  // Get the current zoom level
-  const currentZoom = map.getZoom();
-
-  // Fit the map to the marker's location
-  map.flyTo({
-    center: [-73.99852, 40.68161],
-    zoom: currentZoom,
-    essential: true // this animation is considered essential with respect to prefers-reduced-motion
-  });
-});
-    const soundScroll = new Audio('scroll_sound.mp3');
-const soundTap = new Audio('tap_sound.mp3');
-
-window.addEventListener('scroll', function() {
-  soundScroll.play();
-});
-
-window.addEventListener('touchstart', function() {
-  soundTap.play();
-});
-
-window.addEventListener('click', function() {
-  soundTap.play();
-});
-// The End Of Year Date To Countdown Date
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Unix timestamp (in seconds) to count down to
-    var toDayFromNow = (new Date("July 11, 2024 16:00:00").getTime() / 1000) + (3600 / 60 / 60 / 24) - 1;
-    // Set Up FlipDown
-    var flipdown = new FlipDown(toDayFromNow)
-
-    // Start The Count Down
-    .start()
-    // Do Something When The Countdown Ends
-    .ifEnded(() => {
-        document.querySelector(".flipdown").innerHTML = `<h2>Timer is ended</h2>`;
-    });
-});
-document.addEventListener('DOMContentLoaded', function() {
-  const slider = document.querySelector('.slider');
-  const slides = slider.querySelectorAll('.slide');
-
-  // Clone the first slide and append it to the end
-  const firstSlide = slides[0].cloneNode(true);
-  slider.appendChild(firstSlide);
-
-  // Add hover event listener to each slide
-  slides.forEach((slide) => {
-    slide.addEventListener('mouseenter', playSound);
-  });
-
-  function playSound() {
-    const audio = new Audio('scroll_sound.mp3');
-    audio.play();
-  }
-});
-  </script>
-  
+<script src="index.js"></script>
 </body>
 </html>
