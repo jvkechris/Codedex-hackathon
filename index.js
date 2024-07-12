@@ -152,3 +152,30 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
  
+ const shareButton = document.getElementById('shareButton');
+ const shareButton2 = document.getElementById('shareButton2');
+
+shareButton.addEventListener('click', async () => {
+  try {
+    await navigator.share({
+      title: 'We out in South Brooklyn!',
+      text: "I'm attending a stoop sale in carroll gardens just a lil around the corner of court street and 2nd ave.",
+      url: 'https://codedex-hackathon.vercel.app',
+    });
+    console.log('Successful share');
+  } catch (error) {
+    console.error('Error sharing:', error);
+  }
+});
+shareButton2.addEventListener('click', async () => {
+  try {
+    await navigator.share({
+      title: 'We out in South Brooklyn!',
+      text: "I'm attending a stoop sale in carroll gardens just a lil around the corner of court street and 2nd ave.",
+      url: 'https://codedex-hackathon.vercel.app',
+    });
+    console.log('Successful share');
+  } catch (error) {
+    console.error('Error sharing:', error);
+  }
+});

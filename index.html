@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Codedex Hackathon</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Pacifico&display=swap" rel="stylesheet">
@@ -72,7 +73,7 @@
   </header>
   <div class="count-down-cover">
     <div class="count-down">
-            <h1 style="color:#fff">We rave at:</h1>
+            <h1 style="color:#fff; font-size: 1.6em">Come join us in:</h1>
             <div class="flipdown" id="flipdown"></div>
         </div>
         <div class="glass">
@@ -96,9 +97,13 @@
       <span style="width: 20em">
       <img src="qr.png" width="90%">
       <button id="tmt" class="takemethere">Take me there</button>
+      <button id="shareButton">Invite friends</button>
       </span>
     </div>
   </div>
+  <button id="shareButton2"><span class="material-symbols-outlined">
+share
+</span></button>
  <div class="background"></div>
   <style>
   *{
@@ -323,6 +328,29 @@ span {
 .takemethere:hover {
   box-shadow: -10px 10px 0px #000;
 }
+#shareButton {
+  height: 2.5em;
+  width: 12em;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: .4em;
+}
+#shareButton2 {
+  height: 2.5em;
+  width: 2.5em;
+  background: #fff;
+  color: #000;
+  border-radius: 50%;
+  border: none;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: .9em;
+}
 .slider {
     width: 90%;
     height: 25em;
@@ -536,6 +564,9 @@ backdrop-filter: blur(9.6px);
 -webkit-backdrop-filter: blur(9.6px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 padding: 1em .5em;
+}
+#shareButton2 {
+  display: flex;
 }
 }
 h2 {
